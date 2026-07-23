@@ -1,0 +1,333 @@
+/* =====================================================
+   WHO WE SERVE — Editorial List Design
+   ===================================================== */
+
+.who-we-serve {
+  background: linear-gradient(175deg, #FAF8F5 0%, #F4EFE6 50%, #FAF8F5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.wws-radial-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(168, 102, 30, 0.05) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.wws-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.wws-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #5C0F1A;
+  margin-bottom: 20px;
+}
+
+.wws-divider,
+.wws-trust-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.wws-divider span:not(.wws-diamond),
+.wws-trust-divider span:not(.wws-diamond) {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #A8661E, transparent);
+}
+
+.wws-diamond {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #A8661E;
+  transform: rotate(45deg);
+}
+
+.wws-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.wws-heading-italic {
+  font-style: italic;
+  background: linear-gradient(120deg, #A8661E 0%, #A8661E 55%, #A8661E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wws-subheading {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-gray);
+  line-height: 1.75;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ── Editorial List ── */
+.wws-list {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 72px;
+}
+
+/* Full-width gold rule */
+.wws-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(168, 102, 30, 0.35) 20%, rgba(168, 102, 30, 0.35) 80%, transparent 100%);
+}
+
+/* Each audience row */
+.wws-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 150px minmax(0, 1fr) minmax(360px, 1fr) 32px;
+  align-items: center;
+  gap: 0 28px;
+  padding: 28px 0;
+  cursor: default;
+  transition: background 0.35s ease;
+}
+
+.wws-row::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(168, 102, 30, 0.35) 20%, rgba(168, 102, 30, 0.35) 80%, transparent 100%);
+}
+
+.wws-row:hover {
+  background: rgba(168, 102, 30, 0.03);
+}
+
+.wws-row:hover .wws-row-title {
+  color: var(--color-wine);
+}
+
+.wws-row:hover .wws-row-num {
+  color: #A8661E;
+}
+
+.wws-row:hover .wws-row-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.wws-row:hover .wws-row-desc {
+  opacity: 1;
+}
+
+/* Featured row — Accomplished Professionals */
+.wws-row-featured .wws-row-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.wws-row-featured .wws-row-num {
+  color: #A8661E;
+  font-size: 1.5rem;
+}
+
+/* Number */
+.wws-row-num {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(168, 102, 30, 0.45);
+  letter-spacing: 0.05em;
+  transition: color 0.35s ease;
+  line-height: 1;
+}
+
+/* Tag pill */
+.wws-row-tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  border: 1px solid rgba(168, 102, 30, 0.3);
+  background: rgba(168, 102, 30, 0.05);
+  padding: 5px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  display: inline-block;
+  justify-self: start;
+}
+
+/* Main title */
+.wws-row-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1.2;
+  margin: 0;
+  transition: color 0.35s ease;
+}
+
+/* Description — visible at lower opacity, brightens on hover */
+.wws-row-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+  margin: 0;
+  opacity: 0.7;
+  transition: opacity 0.35s ease;
+}
+
+/* Arrow */
+.wws-row-arrow {
+  font-size: 1.1rem;
+  color: #A8661E;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  justify-self: end;
+}
+
+/* ── Trust Statement ── */
+.wws-trust {
+  background: linear-gradient(135deg, #FAF7F2 0%, #F4EFE6 100%);
+  border: 1px solid rgba(212, 188, 148, 0.28);
+  border-radius: 24px;
+  padding: 56px 72px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.wws-trust-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.wws-trust-heading em {
+  font-style: italic;
+  color: #5C0F1A;
+}
+
+.wws-trust-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-gray);
+  max-width: 660px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.wws-trust-divider {
+  margin: 4px 0;
+}
+
+.wws-trust-badges {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wws-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.wws-check {
+  color: #A8661E;
+  font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .wws-row {
+    grid-template-columns: 44px 145px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 8px 20px;
+    padding: 24px 0;
+  }
+
+  .wws-row-desc {
+    grid-column: 1 / -1;
+    opacity: 0.7;
+    font-size: 0.84rem;
+  }
+
+  .wws-row-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .wws-row {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 6px 16px;
+  }
+
+  .wws-row-tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .wws-row-title {
+    grid-column: 2;
+  }
+
+  .wws-row-desc {
+    grid-column: 1 / -1;
+  }
+
+  .wws-trust {
+    padding: 40px 28px;
+  }
+
+  .wws-trust-badges {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+}

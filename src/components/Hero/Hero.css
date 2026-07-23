@@ -1,0 +1,134 @@
+.hero-cinematic {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background-color: #65441f;
+}
+
+/* Full-cover background image */
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Dark gradient — darker left, transparent right */
+.hero-dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(48, 28, 10, 0.58) 0%, rgba(48, 28, 10, 0.2) 42%, rgba(48, 28, 10, 0.02) 75%),
+    radial-gradient(ellipse at 30% 100%, rgba(48, 28, 10, 0.35) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Heading pinned to lower-left */
+.hero-heading-container {
+  position: relative;
+  z-index: 5;
+  padding: 0 9vw 10vh;
+  max-width: 680px;
+}
+
+/* Small eyebrow label */
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 14px;
+}
+
+/* Main heading */
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #FFFFFF;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-line {
+  display: block;
+  font-size: clamp(2.8rem, 5.8vw, 5.2rem);
+  letter-spacing: -0.02em;
+}
+
+/* Second line with golden italic accent */
+.hero-line-accent {
+  font-size: clamp(2.8rem, 5.8vw, 5.2rem);
+}
+
+.hero-line-accent em {
+  font-style: italic;
+  color: #A8661E; /* Muted Gold */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-bg-img {
+    object-position: 63% center;
+  }
+
+  .hero-dark-overlay {
+    background:
+      linear-gradient(180deg, rgba(28, 13, 5, 0.08) 28%, rgba(28, 13, 5, 0.72) 100%),
+      linear-gradient(90deg, rgba(48, 28, 10, 0.24), transparent 72%);
+  }
+
+  .hero-heading-container {
+    width: 100%;
+    max-width: 620px;
+    padding: 0 24px max(54px, 8svh);
+  }
+
+  .hero-title {
+    max-width: 11ch;
+    font-size: clamp(2.65rem, 11vw, 4.2rem);
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cinematic {
+    min-height: 680px;
+  }
+
+  .hero-bg-img {
+    object-position: 64% 38%;
+  }
+
+  .hero-heading-container {
+    padding-right: 18px;
+    padding-bottom: max(42px, 7svh);
+    padding-left: 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.45rem, 12vw, 3.35rem);
+  }
+}

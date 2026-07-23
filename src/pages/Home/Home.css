@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Match Haven Playfair';
+  src: url('/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Match Haven Playfair';
+  src: url('/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Match Haven Garamond';
+  src: url('/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Match Haven Garamond';
+  src: url('/fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+.home-page {
+  --font-serif: 'Match Haven Playfair', 'Playfair Display', serif;
+  --font-sans: 'Match Haven Garamond', 'EB Garamond', serif;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+}
+
+.home-page :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-serif);
+}
