@@ -54,7 +54,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="testimonials section-padding" ref={sectionRef}>
+    <section className="testimonials section-padding" id="testimonials" ref={sectionRef}>
       <div className="container">
         <h2 className="testimonials-heading">Stories That Found Forever</h2>
         

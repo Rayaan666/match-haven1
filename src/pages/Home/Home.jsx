@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
-import Difference from '../../components/Difference/Difference';
 import ServicesOverview from '../../components/Services/ServicesOverview';
 import WhoWeServe from '../../components/WhoWeServe/WhoWeServe';
 import OurApproach from '../../components/OurApproach/OurApproach';
@@ -23,7 +22,6 @@ const Home = () => {
       <div className="home-page">
         <Hero />
         <About />
-        <Difference />
         <ServicesOverview />
         <WhoWeServe />
         <OurApproach />

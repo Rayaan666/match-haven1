@@ -4,11 +4,13 @@ import { ArrowDownRight, Check, Sparkles } from 'lucide-react'
 import gsap from 'gsap'
 import OurStory from '../../components/OurStory/OurStory'
 import OurPhilosophy from '../../components/OurPhilosophy/OurPhilosophy'
+import TheMatchHavenWay from '../../components/TheMatchHavenWay/TheMatchHavenWay'
+import EthicsAndValues from '../../components/EthicsAndValues/EthicsAndValues'
 import MatchHavenPromise from '../../components/MatchHavenPromise/MatchHavenPromise'
+import FinalCTA from '../../components/FinalCTA/FinalCTA'
 import './AboutPage.css'
 
 const badges = [
-  { label: 'AI-Powered Matching', className: 'badge-ai' },
   { label: 'Invitation Only', className: 'badge-invite' },
   { label: '100% Verified Members', className: 'badge-verified' },
   { label: 'Family Approved', className: 'badge-family' },
@@ -66,10 +68,6 @@ const AboutPage = () => {
 
         <div className="about-hero-inner">
           <div className="about-copy">
-            <div className="about-eyebrow">
-              <span>About Match Haven</span>
-              <span className="eyebrow-rule" />
-            </div>
 
             <h1 id="about-title" className="about-title">
               <span className="about-heading-line"><span>Where <em>Meaningful Stories</em></span></span>
@@ -119,17 +117,18 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <div className="story-preview">
-          <Sparkles className="quote-mark" size={17} strokeWidth={1.3} aria-hidden="true" />
-          <p>“Because finding the right life partner should be guided by trust, values, and genuine human understanding—not endless swiping.”</p>
-          <div className="trust-row">
-            {trustItems.map((item) => <span key={item}><i aria-hidden="true" />{item}</span>)}
-          </div>
-        </div>
       </section>
       <OurStory />
       <OurPhilosophy />
+      <TheMatchHavenWay />
+      <EthicsAndValues />
       <MatchHavenPromise />
+      <FinalCTA 
+        title="Begin Your Story With Us"
+        description="Experience a more considered approach to connection. Let our experts guide you to matches aligned with your values, beliefs, and long-term aspirations."
+        buttonText="Begin Your Journey"
+        image="/about/CTA.png"
+      />
     </>
   )
 }

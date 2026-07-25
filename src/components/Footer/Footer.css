@@ -72,6 +72,15 @@
   cursor: not-allowed;
 }
 
+.footer-link-disabled {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  opacity: .45;
+  cursor: default;
+  user-select: none;
+}
+
 .footer-links a:hover {
   color: var(--color-gold);
 }

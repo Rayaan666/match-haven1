@@ -173,7 +173,7 @@ const ServicesPage = () => {
                   <span>Explore Our Services</span>
                   <ArrowUpRight size={17} strokeWidth={1.6} />
                 </a>
-                <Link className="services-cta services-cta--secondary" to="/contact">
+                <Link className="services-cta services-cta--secondary" to="/services/premier-introductions-for-families#how-it-works">
                   <span>How It Works</span>
                   <ArrowUpRight size={17} strokeWidth={1.6} />
                 </Link>

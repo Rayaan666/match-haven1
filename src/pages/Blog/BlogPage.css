@@ -180,3 +180,124 @@
 .blog-read-more:hover {
   color: var(--color-black);
 }
+
+/* Blog Essay Modal */
+.blog-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.blog-modal-content {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-champagne);
+  border-radius: var(--radius-lg);
+  max-width: 750px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-float);
+  animation: modalFadeIn 0.4s ease;
+  position: relative;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.blog-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--color-champagne);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-black);
+  transition: all 0.3s ease;
+}
+
+.blog-modal-close:hover {
+  background-color: var(--color-gold);
+  color: white;
+}
+
+.blog-modal-body {
+  padding: 48px;
+}
+
+.blog-modal-category {
+  display: inline-block;
+  background-color: var(--color-champagne);
+  color: var(--color-gold);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.blog-modal-body h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+
+.blog-modal-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-champagne);
+  padding-bottom: 20px;
+}
+
+.blog-modal-text {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-charcoal);
+}
+
+.blog-modal-text p {
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.blog-modal-text p:first-of-type {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .blog-modal-body {
+    padding: 32px 24px;
+  }
+  .blog-modal-body h2 {
+    font-size: 1.8rem;
+  }
+}

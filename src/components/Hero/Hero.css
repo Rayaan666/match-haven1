@@ -77,6 +77,10 @@
   letter-spacing: -0.02em;
 }
 
+.hero-line-first {
+  margin-left: -0.06em;
+}
+
 /* Second line with golden italic accent */
 .hero-line-accent {
   font-size: clamp(2.8rem, 5.8vw, 5.2rem);

@@ -4,13 +4,13 @@
   --about-gold: #b99145;
   position: relative;
   isolation: isolate;
-  min-height: max(850px, 90svh);
+  min-height: max(600px, 75svh);
   overflow: hidden;
-  padding: clamp(118px, 13vh, 152px) 5% 32px;
+  padding: clamp(118px, 13vh, 152px) 5% 16px;
   background:
     radial-gradient(circle at 72% 32%, rgba(225, 191, 124, 0.16), transparent 29%),
     radial-gradient(circle at 14% 75%, rgba(118, 47, 57, 0.055), transparent 33%),
-    linear-gradient(125deg, #fffdfa 0%, #fbf7ef 48%, #f3eadc 100%);
+    #FBF7F1;
   color: var(--about-wine);
 }
 
@@ -41,7 +41,7 @@
   position: relative;
   z-index: 4;
   align-self: center;
-  padding-bottom: 106px;
+  padding-bottom: 24px;
   min-width: 0;
   width: 100%;
 }
@@ -84,10 +84,11 @@
 .about-heading-line > span { display: block; }
 
 .about-title em {
-  color: transparent;
-  background: linear-gradient(105deg, #9d752f 0%, #d2ad61 48%, #9a702a 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: #A8661E;
+  background: none;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  -webkit-background-clip: initial;
   font-style: italic;
   font-weight: 400;
 }
@@ -116,7 +117,7 @@
   justify-content: center;
   gap: 25px;
   padding: 0 24px;
-  border-radius: 999px;
+  border-radius: 4px;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.055em;
@@ -142,15 +143,17 @@
 }
 
 .about-button-secondary {
-  border: 1px solid rgba(169, 127, 50, 0.56);
-  background: rgba(255, 255, 255, 0.18);
-  color: var(--about-burgundy);
+  border: 1px solid var(--about-burgundy);
+  background: var(--about-burgundy);
+  color: #fffaf2;
+  box-shadow: 0 13px 28px rgba(83, 30, 40, 0.14);
 }
 
 .about-button-secondary:hover {
-  border-color: var(--about-gold);
-  background: rgba(255, 253, 248, 0.66);
-  box-shadow: 0 14px 28px rgba(99, 65, 29, 0.08);
+  border-color: #aa8239;
+  background: #470b14;
+  color: #e6c77d;
+  box-shadow: 0 17px 34px rgba(83, 30, 40, 0.2);
 }
 
 .collage-wrap { position: relative; height: 590px; min-width: 0; }

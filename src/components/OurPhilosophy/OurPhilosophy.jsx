@@ -11,7 +11,7 @@ const principles = [
     number: '01', title: 'Trust Before Technology', image: '/about/philosophy-trust.jpg',
     alt: 'Watercolor handshake becoming fine golden threads', className: 'exhibit-trust',
     lead: <>Technology introduces.<br /><em>Trust builds relationships.</em></>,
-    body: 'AI can illuminate compatibility and support considered decisions. But trust—earned slowly, protected carefully—will always be the foundation of something lasting.',
+    body: 'Technology can illuminate compatibility and support considered decisions. But trust—earned slowly, protected carefully—will always be the foundation of something lasting.',
   },
   {
     number: '02', title: 'Every Story Is Different', image: '/about/philosophy-stories.jpg',
@@ -62,7 +62,6 @@ const OurPhilosophy = () => {
   const rootRef = useRef(null)
   const galleryRef = useRef(null)
   const trackRef = useRef(null)
-  const threadRef = useRef(null)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -83,19 +82,9 @@ const OurPhilosophy = () => {
             start: 'top top',
             end: () => `+=${distance()}`,
             pin: true,
-            scrub: 1.15,
+            scrub: 0.5,
+            anticipatePin: 1,
             invalidateOnRefresh: true,
-          },
-        })
-
-        gsap.fromTo(threadRef.current, { strokeDashoffset: 1 }, {
-          strokeDashoffset: 0,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: galleryRef.current,
-            start: 'top top',
-            end: () => `+=${distance()}`,
-            scrub: 1.15,
           },
         })
 
@@ -122,13 +111,12 @@ const OurPhilosophy = () => {
       })
 
       gsap.to('.exhibit-art img', { yPercent: -2, duration: 4.5, repeat: -1, yoyo: true, ease: 'sine.inOut', stagger: 0.35 })
-      gsap.from('.philosophy-quote-inner', { y: 38, opacity: 0, duration: 1.1, scrollTrigger: { trigger: '.philosophy-quote', start: 'top 72%', once: true } })
-      gsap.from('.philosophy-summary', { y: 35, opacity: 0, duration: 1, scrollTrigger: { trigger: '.philosophy-summary', start: 'top 76%', once: true } })
 
       return () => mm.revert()
     }, rootRef)
 
     const refresh = () => ScrollTrigger.refresh()
+    refresh()
     window.addEventListener('load', refresh, { once: true })
     return () => {
       window.removeEventListener('load', refresh)
@@ -147,26 +135,7 @@ const OurPhilosophy = () => {
 
       <div className="philosophy-gallery" ref={galleryRef}>
         <div className="philosophy-track" ref={trackRef}>
-          <svg className="gallery-thread" viewBox="0 0 5000 900" preserveAspectRatio="none" aria-hidden="true">
-            <path ref={threadRef} pathLength="1" d="M0 610C280 540 510 700 810 580S1310 340 1610 510 2050 720 2460 560 2900 350 3260 520 3700 720 4090 545C4260 470 4350 415 4430 505c85 97-62 203-151 112-84-86 38-185 132-113 170 130 245 71 589 8" />
-          </svg>
           {principles.map((principle) => <PhilosophyPanel principle={principle} key={principle.number} />)}
-        </div>
-      </div>
-
-      <blockquote className="philosophy-quote">
-        <div className="philosophy-quote-inner">
-          <span className="philosophy-quote-mark" aria-hidden="true">“</span>
-          <p>Meaningful relationships aren’t discovered by chance. They are built through trust, values, patience, and understanding.</p>
-          <svg viewBox="0 0 180 32" aria-hidden="true"><path d="M2 16h55c14 0 19-12 33-12s19 12 33 12h55M74 16c5 13 27 13 32 0" /></svg>
-        </div>
-      </blockquote>
-
-      <div className="philosophy-summary">
-        <span className="philosophy-eyebrow">Our Philosophy in One Sentence</span>
-        <h3>Use intelligent technology to simplify the search, but let human understanding shape every meaningful introduction.</h3>
-        <div className="philosophy-badges">
-          {badges.map((badge) => <span key={badge}><i><Check size={11} strokeWidth={2.2} /></i>{badge}</span>)}
         </div>
       </div>
     </section>

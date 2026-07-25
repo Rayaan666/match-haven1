@@ -146,8 +146,4 @@ img {
   padding: var(--spacing-section) 0;
 }
 
-a, button {
-  cursor: not-allowed !important;
-}
-
 

@@ -24,7 +24,6 @@ const promises = [
 ]
 
 const standards = ['Every profile is treated with care.', 'Every recommendation is thoughtfully curated.', 'Every conversation is handled confidentially.', 'Every member is respected equally.', 'Every introduction reflects our reputation.']
-const trustBadges = ['Personally Curated', 'AI Enhanced', 'Invitation Only', 'Confidential', 'Relationship Experts']
 
 const MatchHavenPromise = () => {
   const rootRef = useRef(null)
@@ -36,20 +35,18 @@ const MatchHavenPromise = () => {
       gsap.from('.promise-orbit-card', { y: 35, scale: .96, opacity: 0, duration: .9, stagger: .13, scrollTrigger: { trigger: '.promise-sanctuary', start: 'top 66%', once: true } })
       gsap.to('.promise-art img', { yPercent: -3, duration: 4, yoyo: true, repeat: -1, ease: 'sine.inOut', stagger: .3 })
       gsap.from('.commitment-certificate', { y: 45, opacity: 0, duration: 1.1, scrollTrigger: { trigger: '.commitment-certificate', start: 'top 76%', once: true } })
-      gsap.from('.signature-stroke', { strokeDashoffset: 1, duration: 1.8, scrollTrigger: { trigger: '.certificate-signature', start: 'top 82%', once: true } })
     }, rootRef)
     return () => ctx.revert()
   }, [])
 
   return <section className="match-promise" ref={rootRef} aria-labelledby="promise-title">
-    <header className="promise-opening"><span>Our Promise</span><h2 id="promise-title">Every Introduction Carries <em>Our Reputation.</em></h2><p>When we introduce two people, we don’t simply make a connection—we stand behind it with the same care, discretion, and integrity that defines every Match Haven experience.</p><div className="promise-rule" aria-hidden="true"><i /><b>MH</b><i /></div></header>
+    <header className="promise-opening"><span>Our Promise</span><h2 id="promise-title">Every Introduction Carries <em>Our Reputation.</em></h2><p>When we introduce two people, we don’t simply make a connection—we stand behind it with the same care, discretion, and integrity that defines every Match Haven experience.</p></header>
     <div className="promise-sanctuary">
       <svg className="constellation" viewBox="0 0 1400 1080" preserveAspectRatio="none" aria-hidden="true"><circle cx="700" cy="540" r="350"/><circle cx="700" cy="540" r="430"/><path className="constellation-path" pathLength="1" d="M700 540C530 376 364 274 190 190M700 540C870 376 1036 274 1210 190M700 540C430 520 278 526 134 546M700 540C970 520 1122 526 1266 546M700 540C510 720 370 820 205 900M700 540C890 720 1030 820 1195 900" /></svg>
-      <div className="promise-emblem"><div><span>Match Haven</span><i />A Promise That Lasts<br />Beyond The First Conversation</div></div>
+      <div className="promise-emblem"><div><span>Match Haven</span><i /><span className="emblem-subtext">A Promise That Lasts<br />Beyond The First Conversation</span></div></div>
       {promises.map((item, index) => <article className={`promise-orbit-card promise-card-${index + 1}`} key={item.key}><div className="promise-art">{item.image ? <img src={item.image} alt={item.alt} loading="lazy" /> : <LineArt type={item.art} />}</div><span className="promise-index">Promise 0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
     </div>
-    <div className="commitment-certificate"><span>The Match Haven Standard</span><h3>Our standard is carried through every introduction.</h3><div className="standard-promises">{standards.map((standard) => <p key={standard}><i>✓</i>{standard}</p>)}</div><div className="certificate-footer"><div className="certificate-signature"><svg viewBox="0 0 220 55" aria-hidden="true"><path className="signature-stroke" pathLength="1" d="M6 38c25-49 31 29 56-15 17-29 22 39 43 2 17-30 20 18 38 1 15-14 25 9 69-8" /></svg><span>The Match Haven Team</span></div><img src="/about/promise-integrity.jpg" alt="Embossed Match Haven seal" /></div></div>
-    <div className="promise-closing"><span className="closing-mark" aria-hidden="true">“</span><blockquote>The greatest promise we can make isn’t finding someone for you. It’s ensuring every introduction is worthy of your trust.</blockquote><div className="promise-badges">{trustBadges.map((badge) => <span key={badge}>✓&nbsp; {badge}</span>)}</div></div>
+    <div className="commitment-certificate"><span>The Match Haven Standard</span><h3>Our standard is carried through every introduction.</h3><div className="standard-promises">{standards.map((standard) => <p key={standard}><i>✓</i>{standard}</p>)}</div></div>
   </section>
 }
 

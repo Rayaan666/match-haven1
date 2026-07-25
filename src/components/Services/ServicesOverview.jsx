@@ -14,7 +14,7 @@ const services = [
     title: 'Premier Introductions for Families',
     headline: 'Where Two Families Begin One Story',
     description:
-      "We understand that in Dubai, a marriage is not just between two individuals — it is a union of families, values, and legacies. Our dedicated family introduction service combines thoughtful compatibility curation with the warmth of a personal concierge to ensure every introduction is dignified, private, and meaningful.",
+      "Our matchmakers meet with individuals and families to understand their values, beliefs, lifestyle, personality, and partner preferences. Following a careful screening and assessment process, we curate compatible matches and share detailed profiles for consideration. Once a mutual interest is established, we facilitate a formal family introduction, creating the foundation for a meaningful and lasting relationship.",
     highlights: ['Personally Verified Family Profiles', 'Cultural Compatibility Mapping', 'Dedicated Relationship Concierge', 'Confidential & Private Process'],
     cta: 'Explore Family Services',
     ctaPath: '/services/premier-introductions-for-families',
@@ -37,10 +37,10 @@ const services = [
     title: 'Signature Match Events',
     headline: 'Curated Encounters, Crafted for Connection',
     description:
-      "Our Signature Match Events are invitation-only experiences held in Dubai's most prestigious venues — intimate, elegant gatherings where accomplished singles meet organically. Each event is thoughtfully curated, carefully vetted, and designed to feel like a luxury occasion rather than a matchmaking exercise.",
-    highlights: ['Invitation-Only Guest List', 'Premium Venue Curation', 'Structured Social Experiences', 'Personal Post-Event Introductions'],
+      "Designed with compatibility in mind, our Signature Match Events bring together carefully selected individuals who share common values, beliefs, and lifestyles. Every event is tailored to foster genuine connections within a like-minded community.",
+    highlights: ['Customised Event', 'Invitation only', 'Premium Venue', 'Formal introduction'],
     cta: 'View Upcoming Events',
-    ctaPath: '/contact',
+    ctaPath: '/services/signature-match-events',
     accent: '#5C0F1A',
     bgPattern: 'service-pattern-b',
     image: '/home/difference2.png',

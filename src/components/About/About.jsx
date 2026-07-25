@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, ShieldCheck, Heart, Sparkles, Users } from 'lucide-react';
@@ -64,10 +65,10 @@ const About = () => {
           
           <div className="about-descriptions">
             <p className="reveal-up">
-              Match Haven is a luxury matrimonial service in Dubai for discerning individuals and families seeking meaningful, lifelong partnerships. Our private, invitation-only community brings together verified members who value compatibility, shared values, and genuine commitment.
+              Match-Haven is a trusted traditional matchmaking service for individuals and families seeking meaningful, introductions based on shared values, compatibility, and genuine commitment.
             </p>
             <p className="reveal-up">
-              Dedicated relationship experts take time to understand your aspirations, family preferences, lifestyle, and long-term goals. Every introduction is personally curated with care, discretion, and a deep respect for the people behind each profile.
+              Inspired by the timeless tradition of personalised matchmaking, at Match Haven we honour traditions and family values, ensuring that matches are not only compatible as individuals but also aligned in terms of background, beliefs, and long-term expectations.
             </p>
           </div>
           
@@ -106,9 +107,9 @@ const About = () => {
           </div>
           
           <div className="reveal-up" style={{ marginTop: '40px' }}>
-            <button className="btn-secondary">
-              Discover Our Process <ArrowRight size={18} className="ml-2" style={{marginLeft: '8px'}}/>
-            </button>
+            <Link to="/about" className="btn-secondary" style={{ display: 'inline-flex', alignItems: 'center' }}>
+              Discover Our Process <ArrowRight size={18} style={{marginLeft: '8px'}}/>
+            </Link>
           </div>
         </div>
         

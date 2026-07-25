@@ -42,8 +42,9 @@ const Hero = () => {
       {/* Heading Overlay */}
       <div className="hero-heading-container" ref={headingRef}>
         <h1 className="hero-title">
-          Ready for forever?<br />
-          Let's tie the Knot.
+          <span className="hero-line hero-line-first">Where</span>
+          <span className="hero-line">Forever</span>
+          <span className="hero-line">Begins</span>
         </h1>
       </div>
     </section>

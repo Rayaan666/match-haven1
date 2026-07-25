@@ -1,0 +1,290 @@
+.emotion-timeline {
+  padding: clamp(25px, 3vw, 40px) 5% clamp(15px, 2vw, 25px);
+  background: #FDFBF7 !important;
+  text-align: center;
+}
+
+.emotion-timeline h3 {
+  margin: 20px auto 90px;
+  color: #5C0F1A;
+  font-size: clamp(2.8rem, 4.7vw, 5.4rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.emotion-timeline h3 em {
+  color: #A8661E;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.timeline-track {
+  position: relative;
+  z-index: 1;
+  top: 102px;
+  width: min(82%, 1110px);
+  height: 1px;
+  margin: 0 auto;
+  background: rgba(181, 138, 61, 0.18);
+}
+
+.timeline-progress {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #d8bb7c, #a8782b, #d8bb7c);
+  transform-origin: left center;
+}
+
+.milestones {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1250px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.milestone {
+  position: relative;
+  outline: none;
+  cursor: default;
+}
+
+.milestone-art {
+  width: 120px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent 69%);
+}
+
+.milestone-art svg {
+  width: 82px;
+  height: 66px;
+  fill: none;
+  stroke: #A8661E;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 600ms ease;
+}
+
+.milestone > i {
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin: 7px auto 13px;
+  border: 2px solid #f9f2e6;
+  border-radius: 50%;
+  background: #b88a3b;
+  box-shadow: 0 0 0 1px rgba(175, 130, 52, 0.38);
+}
+
+.milestone > span {
+  color: #5C0F1A;
+  font-family: var(--font-serif);
+  font-size: 1.14rem;
+}
+
+.milestone::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  width: 220px;
+  padding: 10px 12px;
+  transform: translate(-50%, 8px);
+  border: 1px solid rgba(179, 135, 54, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 253, 248, 0.95);
+  box-shadow: 0 12px 30px rgba(78, 47, 25, 0.09);
+  color: #333333;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+
+.milestone:hover::after,
+.milestone:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.milestone:hover .milestone-art svg,
+.milestone:focus-visible .milestone-art svg {
+  transform: translateY(-5px) scale(1.04);
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .milestone-art svg,
+  .milestone::after {
+    transition-duration: 0.01ms;
+  }
+}
+
+.story-quote {
+  margin: 0;
+  padding: clamp(30px, 3vw, 50px) 5% 0;
+  background: transparent;
+  text-align: center;
+}
+
+.story-quote-inner {
+  position: relative;
+  width: min(92%, 1040px);
+  margin: 0 auto;
+}
+
+.oversized-quote {
+  color: rgba(177, 133, 51, 0.17);
+  font-family: Georgia, serif;
+  font-size: 13rem;
+  line-height: 1;
+}
+
+.opening-quote {
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.closing-quote {
+  display: block;
+  margin: 35px auto 0;
+  font-size: 13rem;
+  line-height: 0.5;
+  text-align: center;
+}
+
+.story-quote p {
+  position: relative;
+  margin: 0;
+  color: #1A1A1A;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.65vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.quote-signature {
+  display: inline-block;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(175, 129, 49, 0.45);
+  color: #9a7230;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  /* --- Timeline track hidden on mobile --- */
+  .timeline-track {
+    display: none;
+  }
+
+  /* --- Milestones stack as cards --- */
+  .milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 253, 248, 0.7);
+    border: 1px solid rgba(179, 135, 54, 0.2);
+    border-radius: 20px;
+    padding: 28px 20px 22px;
+    position: relative;
+  }
+
+  .milestone > i {
+    display: none;
+  }
+
+  .milestone-art {
+    width: 90px;
+    height: 70px;
+    margin: 0 auto 10px;
+  }
+
+  .milestone-art svg {
+    width: 65px;
+    height: 52px;
+  }
+
+  .milestone > span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: block;
+    padding: 0;
+    margin-bottom: 8px;
+    color: #1A1A1A;
+  }
+
+  /* Show the tooltip text as a visible description below the title */
+  .milestone::after {
+    content: attr(data-tooltip);
+    position: static;
+    display: block;
+    opacity: 1;
+    pointer-events: none;
+    transform: none;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #695e57;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .milestone:hover::after,
+  .milestone:focus-visible::after {
+    transform: none;
+    opacity: 1;
+  }
+
+  .milestone:hover .milestone-art svg,
+  .milestone:focus-visible .milestone-art svg {
+    transform: none;
+  }
+
+  /* --- Quote section on mobile --- */
+  .opening-quote {
+    top: -50px;
+    font-size: 9rem;
+  }
+  .closing-quote {
+    font-size: 9rem;
+    margin-top: 40px;
+  }
+  .story-quote {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .story-quote-inner {
+    width: 100%;
+  }
+}
