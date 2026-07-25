@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import './Hero.css';
 
 const HERO_IMAGE = '/home/hero.png';
+const HERO_IMAGE_MOBILE = '/home/hero-mobile.png';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -30,12 +31,15 @@ const Hero = () => {
     <section className="hero-cinematic" ref={heroRef}>
       {/* Cinematic Background Image */}
       <div className="hero-bg-wrapper">
-        <img 
-          src={HERO_IMAGE} 
-          alt="Joyful wedding couple on yellow scooter" 
-          className="hero-bg-img"
-          ref={bgImageRef}
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={HERO_IMAGE_MOBILE} />
+          <img 
+            src={HERO_IMAGE} 
+            alt="Joyful wedding couple on yellow scooter" 
+            className="hero-bg-img"
+            ref={bgImageRef}
+          />
+        </picture>
         <div className="hero-dark-overlay"></div>
       </div>
 

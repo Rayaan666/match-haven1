@@ -94,7 +94,10 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero-bg-img {
-    object-position: 63% center;
+    object-fit: cover;
+    object-position: center top;
+    width: 100%;
+    height: 100%;
   }
 
   .hero-dark-overlay {
@@ -119,11 +122,20 @@
 
 @media (max-width: 480px) {
   .hero-cinematic {
-    min-height: 680px;
+    min-height: 100svh;
+    height: 100dvh;
+  }
+
+  .hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
   }
 
   .hero-bg-img {
-    object-position: 64% 38%;
+    object-fit: cover;
+    object-position: center 20%;
+    width: 100%;
+    height: 100%;
   }
 
   .hero-heading-container {
