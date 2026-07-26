@@ -76,7 +76,6 @@
   font-family: var(--font-sans);
   font-size: 0.95rem;
   color: var(--color-gray);
-  opacity: .45;
   cursor: default;
   user-select: none;
 }

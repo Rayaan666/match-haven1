@@ -327,14 +327,12 @@
 
 /* Disabled state for non-functional buttons */
 .navbar-cta--disabled {
-  opacity: 0.5;
   cursor: default;
   pointer-events: none;
   user-select: none;
 }
 
 .nav-link-disabled {
-  opacity: 0.45;
   cursor: default;
   pointer-events: none;
   user-select: none;

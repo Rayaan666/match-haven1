@@ -140,10 +140,10 @@ const ServicesOverview = () => {
                   ))}
                 </ul>
 
-                <Link to={svc.ctaPath} className="svc-cta" style={{ '--svc-accent': svc.accent }}>
+                <span className="svc-cta svc-cta-disabled" style={{ '--svc-accent': svc.accent, cursor: 'default' }}>
                   {svc.cta}
                   <ArrowRight size={16} />
-                </Link>
+                </span>
               </div>
 
               {/* Right: decorative visual panel */}

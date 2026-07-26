@@ -57,7 +57,7 @@ const FinalCTA = ({
           </p>
           
           <div className="cta-actions cta-reveal">
-            <Link to="/contact" className="btn-primary">{buttonText}</Link>
+            <span className="btn-primary" style={{ cursor: 'default', pointerEvents: 'none', userSelect: 'none' }}>{buttonText}</span>
           </div>
           
           {showFeatures && (
