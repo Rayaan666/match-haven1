@@ -82,48 +82,56 @@ const Navbar = () => {
               const isActive = location.pathname === item.path || (
                 item.children && location.pathname.startsWith(`${item.path}/`)
               )
-              if (item.disabled) {
-                return (
-                  <span key={item.name} className="nav-link nav-link-disabled" aria-disabled="true">
-                    <span className="mobile-nav-index">0{index + 1}</span>
-                    <span>{item.name}</span>
-                  </span>
-                )
-              }
               if (item.children) {
                 return (
                   <div className="nav-item nav-item--has-submenu" key={item.name}>
-                    <Link
-                      to={item.path}
-                      className={`nav-link ${isActive ? 'active' : ''}`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <span className="mobile-nav-index">0{index + 1}</span>
-                      <span>{item.name}</span>
-                      <ChevronDown className="nav-link__chevron" size={13} strokeWidth={1.6} aria-hidden="true" />
-                    </Link>
+                    {item.disabled ? (
+                      <span className="nav-link nav-link-disabled" aria-disabled="true">
+                        <span className="mobile-nav-index">0{index + 1}</span>
+                        <span>{item.name}</span>
+                        <ChevronDown className="nav-link__chevron" size={13} strokeWidth={1.6} aria-hidden="true" />
+                      </span>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className={`nav-link ${isActive ? 'active' : ''}`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <span className="mobile-nav-index">0{index + 1}</span>
+                        <span>{item.name}</span>
+                        <ChevronDown className="nav-link__chevron" size={13} strokeWidth={1.6} aria-hidden="true" />
+                      </Link>
+                    )}
                     <div className="services-submenu">
                       <span className="services-submenu__eyebrow">Signature Services</span>
                       {item.children.map((child) => (
-                        <Link
-                          className={`services-submenu__link ${location.pathname === child.path ? 'active' : ''}`}
-                          to={child.path}
+                        <span
+                          className="services-submenu__link services-submenu__link--disabled"
                           key={child.path}
-                          onClick={() => setIsMenuOpen(false)}
+                          style={{ cursor: 'default' }}
                         >
                           <span>
                             <strong>{child.name}</strong>
                             <small>{child.description}</small>
                           </span>
                           <ArrowUpRight size={15} strokeWidth={1.5} />
-                        </Link>
+                        </span>
                       ))}
-                      <Link className="services-submenu__all" to="/services" onClick={() => setIsMenuOpen(false)}>
+                      <span className="services-submenu__all services-submenu__all--disabled" style={{ cursor: 'default' }}>
                         View all services
                         <ArrowUpRight size={13} strokeWidth={1.5} />
-                      </Link>
+                      </span>
                     </div>
                   </div>
+                )
+              }
+
+              if (item.disabled) {
+                return (
+                  <span key={item.name} className="nav-link nav-link-disabled" aria-disabled="true">
+                    <span className="mobile-nav-index">0{index + 1}</span>
+                    <span>{item.name}</span>
+                  </span>
                 )
               }
 
