@@ -135,15 +135,13 @@
 
   /* Exhibit 01 — move image to the right on mobile */
   .exhibit-trust .exhibit-art img {
-    object-position: 70% center;
+    object-position: 20% center;
   }
 
-  /* Exhibit 03 — zoom out image on mobile */
+  /* Exhibit 03 — ensure the picture fits in on mobile */
   .exhibit-family .exhibit-art img {
-    object-fit: cover;
-    object-position: center center;
-    transform: scale(0.85);
-    transform-origin: center center;
+    object-fit: contain;
+    background-color: #eee2d1;
   }
 }
 
