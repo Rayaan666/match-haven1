@@ -74,7 +74,7 @@ const OurStory = () => {
             <span className="chapter-label"><b>02</b> The Turning Point</span>
             <h3 className="chapter-title">Technology, guided by <em>human wisdom.</em></h3>
             <div className="chapter-prose">
-              <p className="story-sentence">We believed technology should support a relationship—never stand in for the intuition, care, and conversation that bring two people closer.</p>
+              <p className="story-sentence">We believe technology should support a relationship—never stand in for the intuition, care, and conversation that bring two people closer.</p>
               <p className="story-sentence">Families still matter. Values still matter. Meaningful conversations still matter.</p>
             </div>
           </div>
@@ -91,7 +91,7 @@ const OurStory = () => {
           <div className="beginning-copy">
             <span className="chapter-label"><b>03</b> The Beginning</span>
             <h3 className="chapter-title">A more thoughtful way to find <em>forever.</em></h3>
-            <p className="story-sentence">Match Haven brings together intelligent compatibility, experienced relationship experts, family values, privacy, and trust—creating introductions designed not for a moment, but for a lifetime.</p>
+            <p className="story-sentence">Match Haven brings together authenticity, experienced relationship experts, family values, privacy, and trust—creating introductions designed not for a moment, but for a lifetime.</p>
           </div>
           <figure className="story-artwork artwork-beginning">
             <div className="thread-glow" aria-hidden="true" />

@@ -57,7 +57,7 @@ const FinalCTA = ({
           </p>
           
           <div className="cta-actions cta-reveal">
-            <span className="btn-primary" style={{ cursor: 'default', pointerEvents: 'none', userSelect: 'none' }}>{buttonText}</span>
+            <Link to="/contact" className="btn-primary">{buttonText}</Link>
           </div>
           
           {showFeatures && (
@@ -65,7 +65,7 @@ const FinalCTA = ({
               <div className="cta-trust-item"><CheckCircle2 size={16} /> Verified Members</div>
               <div className="cta-trust-item"><CheckCircle2 size={16} /> Private Profiles</div>
               <div className="cta-trust-item"><CheckCircle2 size={16} /> Thoughtful Compatibility</div>
-              <div className="cta-trust-item"><CheckCircle2 size={16} /> Dedicated Matchmakers</div>
+              <div className="cta-trust-item"><CheckCircle2 size={16} /> Dedicated Matchmaker</div>
             </div>
           )}
         </div>

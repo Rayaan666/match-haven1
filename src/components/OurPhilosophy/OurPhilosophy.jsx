@@ -23,7 +23,7 @@ const principles = [
     number: '03', title: 'Families Matter', image: '/about/philosophy-family.jpg',
     alt: 'Two families connected by a floral golden thread', className: 'exhibit-family',
     lead: <>Tradition and modern thinking,<br /><em>held in balance.</em></>,
-    body: 'Families are not obstacles to navigate. They are an important part of lifelong relationships—voices to respect, understand, and welcome into the journey.',
+    body: 'Families are valued partners in the journey. They are an important part of lifelong relationships—voices to respect, understand, and welcome into the journey.',
   },
   {
     number: '04', title: 'Quality Creates Meaning', image: '/about/philosophy-quality.jpg',

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FinalCTA from '../../components/FinalCTA/FinalCTA';
 import './FamilyIntroductionsPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +60,7 @@ const benefits = [
   },
   {
     title: 'Carefully Curated Introductions',
-    description: 'Every introduction is considered by an experienced human—never sent by an impersonal system or selected by convenience.',
+    description: 'Every introduction is curated by an experienced expert—never sent by a system or selected by convenience.',
     image: '/services/compatibility-portfolio.png',
     alt: 'A leather portfolio with carefully prepared compatibility notes',
   },
@@ -72,7 +73,7 @@ const benefits = [
   {
     title: 'Verified Members',
     description: 'We protect the quality of our community through identity checks, considered screening, and a clear commitment to serious intent.',
-    image: '/about/promise-integrity.jpg',
+    image: '/services/benefits/1.png',
     alt: 'A refined visual representing integrity and trust',
   },
   {
@@ -83,8 +84,8 @@ const benefits = [
   },
   {
     title: 'Meaningful Long-Term Compatibility',
-    description: 'We look beyond surface preferences to shared direction, emotional maturity, lifestyle, family understanding, and lasting potential.',
-    image: '/about/couple-editorial.jpg',
+    description: 'We look beyond surface preferences to shared direction, compatibility, and lasting potential.',
+    image: '/services/benefits/2.png',
     alt: 'An elegant couple sharing a meaningful moment',
   },
 ];
@@ -93,32 +94,32 @@ const audiences = [
   {
     title: 'Families seeking trusted introductions',
     description: 'A considered path led by people you can know and trust.',
-    image: '/about/philosophy-family.jpg',
+    image: '/services/suitable/1.png',
   },
   {
     title: 'Professionals looking for serious relationships',
     description: 'Private introductions designed around full and purposeful lives.',
-    image: '/about/philosophy-quality.jpg',
+    image: '/services/suitable/2.png',
   },
   {
     title: 'Entrepreneurs and business families',
     description: 'Discreet guidance that respects legacy, ambition, and time.',
-    image: '/about/philosophy-trust.jpg',
+    image: '/services/suitable/3.png',
   },
   {
     title: 'NRI families',
     description: 'Culturally aware introductions that thoughtfully bridge distance.',
-    image: '/about/philosophy-stories.jpg',
+    image: '/services/suitable/4.png',
   },
   {
     title: 'Individuals seeking long-term commitment',
     description: 'For those ready to build something genuine and enduring.',
-    image: '/about/philosophy-forever.jpg',
+    image: '/services/suitable/5.png',
   },
   {
     title: 'Members valuing privacy and discretion',
     description: 'A protected, invitation-led experience from first conversation onward.',
-    image: '/about/way-values.jpg',
+    image: '/services/suitable/6.png',
   },
 ];
 
@@ -341,7 +342,6 @@ const FamilyIntroductionsPage = () => {
           <div className="family-intro__inner">
             <div className="family-intro__content">
               <p className="family-intro__eyebrow">
-                <span aria-hidden="true" />
                 Signature Service
               </p>
               <h1 className="family-intro__title" id="family-intro-title">
@@ -423,7 +423,7 @@ const FamilyIntroductionsPage = () => {
 
         <section className="family-benefits" id="benefits" aria-labelledby="family-benefits-title">
           <div className="family-section-heading">
-            <p>The Difference Is Personal</p>
+            <p>Our Benefits</p>
             <h2 id="family-benefits-title">Guidance with <em>Depth &amp; Discernment</em></h2>
             <span>Every detail is designed to protect what matters and bring the right people closer.</span>
           </div>
@@ -447,7 +447,7 @@ const FamilyIntroductionsPage = () => {
 
         <section className="family-membership" id="suitable-for" aria-labelledby="family-membership-title">
           <div className="family-section-heading family-section-heading--center">
-            <p>Created for Considered People</p>
+            <p>Suitable For</p>
             <h2 id="family-membership-title">A Private Circle of <em>Intent</em></h2>
             <span>For individuals and families who value sincerity, quality, and a more thoughtful way to meet.</span>
           </div>
@@ -469,7 +469,7 @@ const FamilyIntroductionsPage = () => {
 
         <section className="family-faq" id="faq" aria-labelledby="family-faq-title">
           <div className="family-section-heading">
-            <p>A Private Conversation</p>
+            <p>FAQs</p>
             <h2 id="family-faq-title">Questions, Answered with <em>Care</em></h2>
             <span>Clarity is part of feeling understood. Begin with what matters to you.</span>
           </div>
@@ -506,39 +506,12 @@ const FamilyIntroductionsPage = () => {
           </div>
         </section>
 
-        <section className="family-cta" id="begin-journey" aria-labelledby="family-cta-title">
-          <svg className="family-cta__botanical family-cta__botanical--left" viewBox="0 0 260 410" aria-hidden="true">
-            <path d="M38 398C54 292 103 196 206 76M86 300c-42-13-68-39-78-79M124 244c44-2 80-22 108-60M161 173c-27-26-37-55-30-88M205 78c-1-29 10-52 35-69" />
-            <path d="M9 221c29-1 53 14 72 47-32 4-56-12-72-47ZM131 85c27 13 43 37 47 71-31-10-47-34-47-71ZM232 184c-31 2-56 19-76 51 35 2 60-15 76-51Z" />
-          </svg>
-          <svg className="family-cta__botanical family-cta__botanical--right" viewBox="0 0 260 410" aria-hidden="true">
-            <path d="M38 398C54 292 103 196 206 76M86 300c-42-13-68-39-78-79M124 244c44-2 80-22 108-60M161 173c-27-26-37-55-30-88M205 78c-1-29 10-52 35-69" />
-            <path d="M9 221c29-1 53 14 72 47-32 4-56-12-72-47ZM131 85c27 13 43 37 47 71-31-10-47-34-47-71ZM232 184c-31 2-56 19-76 51 35 2 60-15 76-51Z" />
-          </svg>
-
-          <div className="family-cta__inner">
-            <svg className="family-cta__ribbon" viewBox="0 0 1400 360" preserveAspectRatio="none" aria-hidden="true">
-              <path className="family-cta__ribbon-soft" d="M-80 220C220 70 382 350 680 190S1120 50 1480 205" />
-              <path className="family-cta__ribbon-path" d="M-80 220C220 70 382 350 680 190S1120 50 1480 205" />
-            </svg>
-            <p>By Invitation · With Complete Discretion</p>
-            <h2 id="family-cta-title">Begin Your Family&apos;s<br /><em>Matchmaking Journey.</em></h2>
-            <span className="family-cta__copy">
-              Experience a refined approach to matchmaking where thoughtful introductions, trusted guidance,
-              and genuine human understanding come together to create meaningful lifelong relationships.
-            </span>
-            <div className="family-cta__actions">
-              <Link className="family-cta__button family-cta__button--primary" to="/contact">
-                Schedule a Private Consultation
-                <ArrowUpRight size={16} strokeWidth={1.5} />
-              </Link>
-              <Link className="family-cta__button family-cta__button--secondary" to="/contact">
-                Speak With Our Matchmaking Team
-                <ArrowUpRight size={16} strokeWidth={1.5} />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          title="Begin Your Family's Matchmaking Journey"
+          description="Experience a refined approach to matchmaking where thoughtful introductions, trusted guidance, and genuine human understanding come together to create meaningful lifelong relationships."
+          buttonText="Schedule a Private Consultation"
+          image="/services/CTA.png"
+        />
       </div>
     </>
   );

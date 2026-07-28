@@ -18,7 +18,7 @@ const moments = [
     id: 'vetting',
     title: 'The Vetting',
     mhTitle: 'The Match Haven Discretion',
-    description: 'Every introduction is backed by comprehensive, discreet background checks and in-person interviews to ensure the highest level of trust and security.',
+    description: 'Every introduction is backed by in-person interviews to ensure the highest level of trust and security.',
     image: '/about/2.png',
     alignment: 'right'
   },

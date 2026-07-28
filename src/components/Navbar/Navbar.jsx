@@ -8,8 +8,7 @@ const navItems = [
   { name: 'About', path: '/about' },
   {
     name: 'Services',
-    path: '/services',
-    disabled: true,
+    path: '/services/premier-introductions-for-families',
     children: [
       {
         name: 'Premier Introductions for Families',
@@ -23,8 +22,8 @@ const navItems = [
       },
     ],
   },
-  { name: 'Blogs', path: '/blog', disabled: true },
-  { name: 'Contact', path: '/contact', disabled: true },
+  { name: 'Blogs', path: '/blog' },
+  { name: 'Contact', path: '/contact' },
 ]
 
 const Navbar = () => {
@@ -80,58 +79,38 @@ const Navbar = () => {
           <div className="nav-links">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path || (
-                item.children && location.pathname.startsWith(`${item.path}/`)
+                item.children && location.pathname.startsWith('/services')
               )
               if (item.children) {
                 return (
                   <div className="nav-item nav-item--has-submenu" key={item.name}>
-                    {item.disabled ? (
-                      <span className="nav-link nav-link-disabled" aria-disabled="true">
-                        <span className="mobile-nav-index">0{index + 1}</span>
-                        <span>{item.name}</span>
-                        <ChevronDown className="nav-link__chevron" size={13} strokeWidth={1.6} aria-hidden="true" />
-                      </span>
-                    ) : (
-                      <Link
-                        to={item.path}
-                        className={`nav-link ${isActive ? 'active' : ''}`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        <span className="mobile-nav-index">0{index + 1}</span>
-                        <span>{item.name}</span>
-                        <ChevronDown className="nav-link__chevron" size={13} strokeWidth={1.6} aria-hidden="true" />
-                      </Link>
-                    )}
+                    <Link
+                      to={item.path}
+                      className={`nav-link ${isActive ? 'active' : ''}`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="mobile-nav-index">0{index + 1}</span>
+                      <span>{item.name}</span>
+                      <ChevronDown className="nav-link__chevron" size={13} strokeWidth={1.6} aria-hidden="true" />
+                    </Link>
                     <div className="services-submenu">
                       <span className="services-submenu__eyebrow">Signature Services</span>
                       {item.children.map((child) => (
-                        <span
-                          className="services-submenu__link services-submenu__link--disabled"
+                        <Link
+                          to={child.path}
+                          className="services-submenu__link"
                           key={child.path}
-                          style={{ cursor: 'default' }}
+                          onClick={() => setIsMenuOpen(false)}
                         >
                           <span>
                             <strong>{child.name}</strong>
                             <small>{child.description}</small>
                           </span>
                           <ArrowUpRight size={15} strokeWidth={1.5} />
-                        </span>
+                        </Link>
                       ))}
-                      <span className="services-submenu__all services-submenu__all--disabled" style={{ cursor: 'default' }}>
-                        View all services
-                        <ArrowUpRight size={13} strokeWidth={1.5} />
-                      </span>
                     </div>
                   </div>
-                )
-              }
-
-              if (item.disabled) {
-                return (
-                  <span key={item.name} className="nav-link nav-link-disabled" aria-disabled="true">
-                    <span className="mobile-nav-index">0{index + 1}</span>
-                    <span>{item.name}</span>
-                  </span>
                 )
               }
 
@@ -144,14 +123,16 @@ const Navbar = () => {
             })}
           </div>
           <div className="navbar-mobile-ctas">
-            <span className="navbar-cta navbar-cta--disabled" aria-disabled="true">Begin Your Journey <ArrowUpRight size={16} /></span>
+            <Link to="/contact" className="navbar-cta" onClick={() => setIsMenuOpen(false)}>
+              Begin Your Journey <ArrowUpRight size={16} />
+            </Link>
           </div>
         </nav>
 
         <div className="navbar-actions">
-          <span className="navbar-cta navbar-cta--disabled" aria-disabled="true">
+          <Link to="/contact" className="navbar-cta">
             <span>Begin Your Journey</span><ArrowUpRight size={16} strokeWidth={1.7} />
-          </span>
+          </Link>
         </div>
 
         <button 

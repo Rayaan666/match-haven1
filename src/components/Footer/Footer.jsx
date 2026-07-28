@@ -21,21 +21,20 @@ const Footer = () => {
               <h4>Navigation</h4>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
-                <li><span className="footer-link-disabled">Blogs</span></li>
-                <li><span className="footer-link-disabled">Membership</span></li>
-                <li><span className="footer-link-disabled">Contact</span></li>
+                <li><Link to="/blog">Blogs</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
             
             <div className="footer-links">
               <h4>Legal</h4>
               <ul>
-                <li><span className="footer-link-disabled">Privacy Policy</span></li>
-                <li><span className="footer-link-disabled">Terms of Service</span></li>
-                <li><span className="footer-link-disabled">Community Guidelines</span></li>
+                <li><Link to="/privacy">Privacy Policy</Link></li>
+                <li><Link to="/terms">Terms of Service</Link></li>
+                <li><Link to="/guidelines">Community Guidelines</Link></li>
               </ul>
             </div>
-            
+
             <div className="footer-links">
               <h4>Contact</h4>
               <ul>

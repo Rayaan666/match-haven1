@@ -325,15 +325,4 @@
   .navbar-shell, .navbar-menu, .navbar-backdrop, .navbar-cta, .navbar-cta svg, .brand-monogram { transition-duration: .01ms; }
 }
 
-/* Disabled state for non-functional buttons */
-.navbar-cta--disabled {
-  cursor: default;
-  pointer-events: none;
-  user-select: none;
-}
 
-.nav-link-disabled {
-  cursor: default;
-  pointer-events: none;
-  user-select: none;
-}

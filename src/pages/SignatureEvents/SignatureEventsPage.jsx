@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowUpRight, Check } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FinalCTA from '../../components/FinalCTA/FinalCTA';
 import './SignatureEventsPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,32 +55,32 @@ const eventBenefits = [
   {
     title: 'Exclusive Invitation-Only Events',
     description: 'Every gathering begins with intention, never open registration or public attendance.',
-    image: '/services/events/rooftop-gathering.png',
+    image: '/services/benefits2/1.png',
   },
   {
     title: 'Carefully Curated Attendees',
     description: 'Guests are selected for shared intent, compatibility, and readiness for a meaningful connection.',
-    image: '/home/difference2.png',
+    image: '/services/benefits2/2.png',
   },
   {
     title: 'Relaxed & Natural Conversations',
     description: 'Thoughtful settings and gentle hosting make it easy for genuine conversation to unfold.',
-    image: '/services/events/candlelit-lounge.png',
+    image: '/services/benefits2/3.png',
   },
   {
     title: 'Luxury Hospitality & Venues',
     description: 'Each private setting is chosen for atmosphere, service, beauty, and quiet discretion.',
-    image: '/services/events/private-dining.png',
+    image: '/services/benefits2/4.png',
   },
   {
     title: 'Privacy Throughout Every Event',
     description: 'No public guest lists, no exposed profiles, and no pressure—only considered introductions.',
-    image: '/services/private-invitation.png',
+    image: '/services/benefits2/5.png',
   },
   {
     title: 'Meaningful Connections Beyond Algorithms',
     description: 'Human chemistry, shared moments, and expert curation create possibilities technology cannot predict.',
-    image: '/services/compatibility-portfolio.png',
+    image: '/services/benefits2/6.png',
   },
 ];
 
@@ -328,7 +329,9 @@ const SignatureEventsPage = () => {
               {ribbonMoments.map((moment, index) => (
                 <div className={`event-ribbon__moment event-ribbon__moment--${index + 1}`} key={moment}>
                   <span>{moment}</span>
-                  {index < ribbonMoments.length - 1 && <ArrowDown size={12} strokeWidth={1.4} />}
+                  {(index < ribbonMoments.length - 1 || moment === 'Possibilities') && (
+                    <ArrowDown size={12} strokeWidth={1.4} />
+                  )}
                 </div>
               ))}
             </div>
@@ -337,36 +340,31 @@ const SignatureEventsPage = () => {
 
         <section className="event-screening" id="screening-process" aria-labelledby="event-screening-title">
           <div className="event-section-heading event-section-heading--center">
-            <p>Selected with Discernment</p>
+            <p>Screening Process</p>
             <h2 id="event-screening-title">The Luxury <em>Selection Studio</em></h2>
             <span>Every application is considered by people who understand that the quality of the room shapes every conversation within it.</span>
           </div>
 
-          <div className="event-selection-studio">
-            <div className="event-studio__surface" aria-hidden="true" />
-            <div className="event-studio__seal" aria-hidden="true">
-              <span>MH</span>
-            </div>
-            <div className="event-studio__pen" aria-hidden="true" />
-            <svg className="event-studio__threads" viewBox="0 0 1220 790" preserveAspectRatio="none" aria-hidden="true">
-              <path className="event-studio__thread-ghost" d="M185 178C335 100 405 298 572 222S787 82 959 182c110 64 70 192-56 218-155 31-189 156-68 251M184 178C101 278 184 416 323 465s203 156 120 254" />
-              <path className="event-studio__thread-gold" pathLength="2100" d="M185 178C335 100 405 298 572 222S787 82 959 182c110 64 70 192-56 218-155 31-189 156-68 251M184 178C101 278 184 416 323 465s203 156 120 254" />
-            </svg>
-
-            {screeningStages.map((stage) => (
-              <article className={`event-studio__panel ${stage.position}`} key={stage.title}>
-                <span>{stage.stage}</span>
-                <h3>{stage.title}</h3>
-                <p>{stage.description}</p>
-                <i aria-hidden="true" />
-              </article>
+          <div className="event-screening__list">
+            {screeningStages.map((stage, index) => (
+              <div className="event-screening__item" key={stage.title}>
+                <div className="event-screening__number" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <div className="event-screening__rule" aria-hidden="true" />
+                <div className="event-screening__body">
+                  <span className="event-screening__stage">{stage.stage}</span>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </section>
 
         <section className="event-benefits" id="event-benefits" aria-labelledby="event-benefits-title">
           <div className="event-section-heading">
-            <p>Designed for Genuine Chemistry</p>
+            <p>Benefits</p>
             <h2 id="event-benefits-title">Every Detail Creates <em>Possibility</em></h2>
             <span>From the guest list to the final candle, each choice is made to help meaningful connection feel effortless.</span>
           </div>
@@ -386,43 +384,12 @@ const SignatureEventsPage = () => {
           </div>
         </section>
 
-        <section className="event-invitation-cta" id="request-invitation" aria-labelledby="event-cta-title">
-          <svg className="event-cta-botanical event-cta-botanical--left" viewBox="0 0 270 430" aria-hidden="true">
-            <path d="M28 422C57 310 100 219 205 93M78 319c-39-8-64-32-76-71M120 254c43-4 79-25 107-63M158 181c-26-24-38-53-34-88M204 94c-2-27 9-51 34-72" />
-            <path d="M3 248c31 1 56 16 75 46-32 5-57-11-75-46ZM124 94c27 12 44 36 50 68-31-8-48-31-50-68ZM227 191c-31 3-57 20-77 51 34 3 60-14 77-51Z" />
-          </svg>
-          <svg className="event-cta-botanical event-cta-botanical--right" viewBox="0 0 270 430" aria-hidden="true">
-            <path d="M28 422C57 310 100 219 205 93M78 319c-39-8-64-32-76-71M120 254c43-4 79-25 107-63M158 181c-26-24-38-53-34-88M204 94c-2-27 9-51 34-72" />
-            <path d="M3 248c31 1 56 16 75 46-32 5-57-11-75-46ZM124 94c27 12 44 36 50 68-31-8-48-31-50-68ZM227 191c-31 3-57 20-77 51 34 3 60-14 77-51Z" />
-          </svg>
-
-          <svg className="event-envelope" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <path className="event-envelope__outline" pathLength="900" d="M319 184h562c30 0 54 24 54 54v274H265V238c0-30 24-54 54-54Z" />
-            <path className="event-envelope__flap" d="m274 214 326 246 326-246M274 500l225-194M926 500 701 306" />
-            <path className="event-envelope__ribbon" pathLength="600" d="M-50 360c202-135 351 60 523-30s265-33 370 26 211 43 407-80" />
-            <path className="event-envelope__ribbon" pathLength="600" d="M-40 408c215-112 346 80 532-18s281-17 376 34 206 20 373-93" />
-          </svg>
-
-          <div className="event-invitation-cta__content">
-            <p>Private Gatherings · Curated Introductions</p>
-            <h2 id="event-cta-title">Your <em>Invitation</em> Awaits.</h2>
-            <span>
-              Experience thoughtfully curated events where every guest has been carefully selected,
-              every conversation begins naturally, and every introduction has the potential to become
-              something meaningful.
-            </span>
-            <div className="event-invitation-cta__actions">
-              <Link className="event-cta-button event-cta-button--primary" to="/contact">
-                Request an Invitation
-                <ArrowUpRight size={16} strokeWidth={1.5} />
-              </Link>
-              <Link className="event-cta-button event-cta-button--secondary" to="/contact">
-                Speak With Our Concierge Team
-                <ArrowUpRight size={16} strokeWidth={1.5} />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          title="Your Invitation Awaits"
+          description="Experience thoughtfully curated events where every guest has been carefully selected, every conversation begins naturally, and every introduction has the potential to become something meaningful."
+          buttonText="Request an Invitation"
+          image="/services/CTA2.png"
+        />
       </div>
     </>
   );

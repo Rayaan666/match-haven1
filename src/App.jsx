@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Home from './pages/Home/Home'
 import AboutPage from './pages/About/AboutPage'
-import ServicesPage from './pages/Services/ServicesPage'
 import FamilyIntroductionsPage from './pages/FamilyIntroductions/FamilyIntroductionsPage'
 import SignatureEventsPage from './pages/SignatureEvents/SignatureEventsPage'
 import BlogPage from './pages/Blog/BlogPage'
@@ -29,7 +28,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/premier-introductions-for-families" element={<FamilyIntroductionsPage />} />
           <Route path="/services/signature-match-events" element={<SignatureEventsPage />} />
           <Route path="/blog" element={<BlogPage />} />
