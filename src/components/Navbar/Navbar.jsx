@@ -114,6 +114,25 @@ const Navbar = () => {
                 )
               }
 
+              if (item.name === 'Blogs') {
+                return (
+                  <a
+                    key={item.name}
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      alert("Our publication platform is currently under curation. Articles on relationship science and premium matchmaking will be available soon.");
+                      setIsMenuOpen(false);
+                    }}
+                    style={{ opacity: 0.7, cursor: 'not-allowed' }}
+                  >
+                    <span className="mobile-nav-index">0{index + 1}</span>
+                    <span>{item.name}</span>
+                  </a>
+                )
+              }
+
               return (
                 <Link key={item.name} to={item.path} className={`nav-link ${isActive ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
                   <span className="mobile-nav-index">0{index + 1}</span>

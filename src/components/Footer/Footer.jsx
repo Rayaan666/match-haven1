@@ -21,7 +21,18 @@ const Footer = () => {
               <h4>Navigation</h4>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/blog">Blogs</Link></li>
+                <li>
+                  <a 
+                    href="#" 
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      alert("Our publication platform is currently under curation. Articles on relationship science and premium matchmaking will be available soon."); 
+                    }}
+                    style={{ opacity: 0.6, cursor: 'not-allowed' }}
+                  >
+                    Blogs
+                  </a>
+                </li>
                 <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -39,7 +50,8 @@ const Footer = () => {
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:matchhaven.events@gmail.com">matchhaven.events@gmail.com</a></li>
-                <li><a href="tel:+971561663994">+971 56 166 3994</a></li>
+                <li><a href="tel:+971561663994">Phone: +971 56 166 3994</a></li>
+                <li><a href="https://wa.me/971561663994" target="_blank" rel="noopener noreferrer">WhatsApp: +971 56 166 3994</a></li>
               </ul>
               <div className="social-icons">
                 <a href="#" onClick={(e) => { e.preventDefault(); alert("To protect the confidentiality of our elite network, Match Haven does not maintain public social media channels. All communications are private and direct."); }} aria-label="Instagram">
