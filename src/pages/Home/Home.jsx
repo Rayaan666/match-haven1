@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import Hero from '../../components/Hero/Hero';
 import About from '../../components/About/About';
 import ServicesOverview from '../../components/Services/ServicesOverview';
-import WhoWeServe from '../../components/WhoWeServe/WhoWeServe';
-import OurApproach from '../../components/OurApproach/OurApproach';
 import WhyMatchHaven from '../../components/WhyMatchHaven/WhyMatchHaven';
 import FinalCTA from '../../components/FinalCTA/FinalCTA';
 import './Home.css';
@@ -23,8 +21,6 @@ const Home = () => {
         <Hero />
         <About />
         <ServicesOverview />
-        <WhoWeServe />
-        <OurApproach />
         <WhyMatchHaven />
         <FinalCTA />
       </div>

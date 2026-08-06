@@ -1,10 +1,8 @@
 import { useLayoutEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { ArrowDownRight, Check, Sparkles } from 'lucide-react'
+import { ArrowDownRight, Check } from 'lucide-react'
 import gsap from 'gsap'
 import OurStory from '../../components/OurStory/OurStory'
-import OurPhilosophy from '../../components/OurPhilosophy/OurPhilosophy'
-import TheMatchHavenWay from '../../components/TheMatchHavenWay/TheMatchHavenWay'
 import EthicsAndValues from '../../components/EthicsAndValues/EthicsAndValues'
 import MatchHavenPromise from '../../components/MatchHavenPromise/MatchHavenPromise'
 import FinalCTA from '../../components/FinalCTA/FinalCTA'
@@ -15,8 +13,6 @@ const badges = [
   { label: '100% Verified Members', className: 'badge-verified' },
   { label: 'Family Approved', className: 'badge-family' },
 ]
-
-const trustItems = ['Human Matchmaking Experts', 'AI-Driven Compatibility', 'Private & Confidential']
 
 const AboutPage = () => {
   const heroRef = useRef(null)
@@ -82,8 +78,8 @@ const AboutPage = () => {
               <a href="#our-story" className="about-button about-button-primary">
                 <span>Our Story</span><ArrowDownRight size={17} strokeWidth={1.5} />
               </a>
-              <a href="#our-philosophy" className="about-button about-button-secondary">
-                <span>Meet Our Philosophy</span><ArrowDownRight size={17} strokeWidth={1.5} />
+              <a href="#ethics-values-title" className="about-button about-button-secondary">
+                <span>Our Values</span><ArrowDownRight size={17} strokeWidth={1.5} />
               </a>
             </div>
           </div>
@@ -119,8 +115,6 @@ const AboutPage = () => {
 
       </section>
       <OurStory />
-      <OurPhilosophy />
-      <TheMatchHavenWay />
       <EthicsAndValues />
       <MatchHavenPromise />
       <FinalCTA 
